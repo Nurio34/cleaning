@@ -17,23 +17,23 @@ const navItems: NavItemType[] = [
   },
   {
     name: "corporate",
-    label: "Kurumsal",
-    href: "/kurumsal",
+    label: "kurumsal",
+    href: "/#kurumsal",
   },
   {
     name: "services",
-    label: "Hizmetlerimiz",
-    href: "/hizmetlerimiz",
+    label: "hizmetlerimiz",
+    href: "/#hizmetlerimiz",
   },
   {
     name: "reference",
-    label: "Referanslar",
-    href: "/referanslar",
+    label: "referanslar",
+    href: "/#referanslar",
   },
   {
     name: "communication",
-    label: "İletişim",
-    href: "/iletisim",
+    label: "iletişim",
+    href: "/#iletişim",
   },
 ];
 
@@ -42,7 +42,7 @@ function Navigation() {
 
   return (
     <nav>
-      <ul className="flex items-center gap-x-[3vw]">
+      <ul className="flex flex-col lg:flex-row items-center gap-x-[3vw]">
         {navItems.map((item) => (
           <NavLink key={item.name} item={item} currentPath={path} />
         ))}

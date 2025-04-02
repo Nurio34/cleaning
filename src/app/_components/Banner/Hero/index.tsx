@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,31 +29,47 @@ const images = [
 ];
 
 function Hero() {
-  const [currentImage, setCurrentImage] = useState<ImageType>(images[0]);
-  const { src, title, message } = currentImage;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { src, title, message } = images[currentImageIndex];
 
   const [isFading, setIsFading] = useState(false);
-  const [isFade, setIsFade] = useState(false);
+  const [isFaded, setIsFaded] = useState(false);
+  const intRef = useRef<NodeJS.Timeout | null>(null);
+  const timeRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    setInterval(() => {
+    if (intRef.current) clearInterval(intRef.current);
+
+    intRef.current = setInterval(() => {
       setIsFading(true);
-    }, 1000);
+    }, 3000);
+
+    return () => {
+      if (intRef.current) clearInterval(intRef.current);
+    };
   }, []);
 
   useEffect(() => {
+    if (timeRef.current) clearTimeout(timeRef.current);
+
     if (isFading) {
-      setTimeout(() => {
-        setIsFade(true);
+      timeRef.current = setTimeout(() => {
+        setIsFaded(true);
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
       }, 1000);
     }
+
+    return () => {
+      if (timeRef.current) clearTimeout(timeRef.current);
+    };
   }, [isFading]);
 
   useEffect(() => {
-    if (isFade) {
+    if (isFaded && isFading) {
       setIsFading(false);
+      setIsFaded(false);
     }
-  }, [isFade]);
+  }, [currentImageIndex]);
 
   return (
     <div
@@ -63,40 +79,66 @@ function Hero() {
     >
       <figure
         className={`relative col-span-full row-span-full transition-opacity duration-1000
-            ${isFading ? "opacity-0" : ""}
+             ${isFading ? "opacity-25" : ""}
         `}
       >
         <Image src={src} alt="banner1" fill className="object-cover" />
       </figure>
       <div
-        className="col-start-1 col-span-1 row-start-1 row-span-1
+        className="col-start-1 col-end-3 lg:col-end-2 row-start-1 row-span-1
             z-10 justify-self-center self-center
-            grid
-            text-white space-y-[2vh]
+            grid text-white
+           space-y-[2vh] px-[3vw]
         "
+        style={{ WebkitTextStroke: "1px black" }}
       >
         <p
-          className={`text-4xl font-bold transition-all duration-1000
-            ${isFading ? "opacity-0" : ""}
-            ${isFade ? "-translate-y-full" : ""}  
+          className={`text-3xl lg:text-4xl font-extrabold
+            ${
+              isFading
+                ? "transition-all duration-1000 opacity-0"
+                : "opacity-100"
+            }
+            ${
+              isFaded
+                ? "transition-none -translate-y-full"
+                : "transition-all duration-1000 translate-y-0"
+            } 
         `}
         >
           {title}
         </p>
         <p
-          className={`text-xl font-semibold transition-all duration-1000
-            ${isFading ? "opacity-0" : ""}   
-            ${isFade ? "-translate-x-full" : ""} 
+          className={`text-xl lg:text-2xl font-extrabold
+            ${
+              isFading
+                ? "transition-all duration-1000 opacity-0"
+                : "opacity-100"
+            }   
+            ${
+              isFaded
+                ? "transition-none -translate-x-full"
+                : "transition-all duration-1000 translate-x-0"
+            } 
         `}
         >
           {message}
         </p>
         <Link
           href={"/iletisim"}
-          className={` justify-self-end btn btn-secondary transition-all duration-1000
-             ${isFading ? "opacity-0" : ""}  
-            ${isFade ? "translate-x-full" : ""}      
+          className={` justify-self-end btn btn-secondary 
+             ${
+               isFading
+                 ? "transition-all duration-1000 opacity-0"
+                 : "opacity-100"
+             }  
+            ${
+              isFaded
+                ? "transition-none translate-x-full "
+                : "transition-all duration-1000 translate-x-0"
+            }      
         `}
+          style={{ WebkitTextStroke: "0px black" }}
         >
           İletişime Geç
         </Link>

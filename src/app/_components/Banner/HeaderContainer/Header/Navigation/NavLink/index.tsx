@@ -9,12 +9,11 @@ function NavLink({
   currentPath: string;
 }) {
   const { label, href } = item;
-  console.log(href, currentPath);
 
   return (
     <Link
       href={href}
-      className={`text-lg btn btn-ghost hover:bg-primary hover:text-base-100
+      className={`text-lg btn btn-ghost hover:bg-primary hover:text-base-100 capitalize
             ${
               currentPath === href
                 ? "underline underline-offset-4 font-bold text-xl"
