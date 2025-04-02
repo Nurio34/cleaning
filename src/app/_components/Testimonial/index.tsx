@@ -5,7 +5,7 @@ function Testimonial() {
   return (
     <section
       id="referanslar"
-      className="lg:h-screen flex flex-col gap-y-[2vh] lg:grid grid-cols-12 grid-rows-12 isolate"
+      className="lg:min-h-screen flex flex-col gap-y-[2vh] lg:grid grid-cols-12 grid-rows-12 isolate"
     >
       <div
         className="hidden lg:block col-start-2 col-end-12 row-start-3 row-end-11 scale-110

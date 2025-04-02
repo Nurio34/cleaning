@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <main
-        className="bg-base-100/80 max-h-screen overflow-auto"
+        className="bg-base-100/80 max-h-screen overflow-auto space-y-[4vh] lg:space-y-0"
         style={{
           backgroundImage: "url('/banner/1.jpg')",
           backgroundSize: "cover",
