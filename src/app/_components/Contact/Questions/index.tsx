@@ -37,11 +37,11 @@ function Questions({
     } finally {
       setIsLoading(false);
     }
-  }, [count, skipNewQuestion]); // Dependencies for the hook
+  }, [count, skipNewQuestion]);
 
   useEffect(() => {
     getInitialQuestion();
-  }, [getInitialQuestion]);
+  }, []);
 
   useEffect(() => {
     if (newQuestion.id.trim() !== "") {
