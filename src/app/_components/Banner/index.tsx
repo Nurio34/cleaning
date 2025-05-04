@@ -28,7 +28,7 @@ function Banner() {
 
   return (
     <div
-      className="w-full h-screen flex flex-col lg:pb-[3vh]"
+      className="relative w-screen h-screen flex flex-col lg:pb-[3vh] overflow-x-hidden"
       onClick={() => {
         if (isMobile) setIsMenuOpen(false);
       }}

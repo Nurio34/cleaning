@@ -16,7 +16,7 @@ function Services() {
         <div className="absolute z-20 -top-12 -right-12 text-9xl">🧹</div>
       </div>
       <h2
-        className="col-start-1 col-span-full row-start-1 row-end-3 self-center justify-self-center text-xl lg:text-7xl font-extrabold pt-[2vh] lg:py-0"
+        className="col-start-1 col-span-full row-start-1 row-end-3 self-center justify-self-center text-xl lg:text-5xl font-extrabold pt-[2vh] lg:py-0"
         style={{ fontVariant: "small-caps" }}
       >
         Hizmetlerimiz
@@ -28,7 +28,7 @@ function Services() {
         "
       >
         <Image
-          src={"/banner/3.jpg"}
+          src={"/sections/services.png"}
           alt="banner2"
           fill
           className="object-cover"
@@ -65,7 +65,7 @@ function Services() {
           geçin!
         </p>
         <Link
-          href={"/iletisim"}
+          href={"#iletişim"}
           className="justify-self-end btn btn-secondary transition-transform hover:scale-125"
         >
           İletişime Geçin

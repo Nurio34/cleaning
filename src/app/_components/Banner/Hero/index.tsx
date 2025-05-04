@@ -12,19 +12,24 @@ export type ImageType = {
 
 const images = [
   {
-    src: "/banner/1.jpg",
-    title: "Güvenilir Hizmet, Ferah Apartmanlar",
-    message: "Apartmanınızda konfor ve hijyen için yanınızdayız",
+    src: "/banner/yatay4.png",
+    title: "Parlayan Girişler, İlk İzlenim Temizlikle Başlar",
+    message: "Misafirlerinizi hijyenik ve bakımlı girişlerle karşılayın",
   },
   {
-    src: "/banner/2.jpg",
+    src: "/banner/yatay2.png",
     title: "Profesyonel Temizlik, Sağlıklı Yaşam",
     message: "Uzman ekibimizle, yaşam alanlarınızı tertemiz yapıyoruz",
   },
   {
-    src: "/banner/3.jpg",
+    src: "/banner/yatay3.png",
     title: "Detaylara Özen – Her Köşede Hijyen",
     message: "Kalite ve titizlikle, apartmanınızın her alanında temizlik",
+  },
+  {
+    src: "/banner/yatay1.png",
+    title: "Güvenilir Hizmet, Ferah Apartmanlar",
+    message: "Apartmanınızda konfor ve hijyen için yanınızdayız",
   },
 ];
 
@@ -42,7 +47,7 @@ function Hero() {
 
     intRef.current = setInterval(() => {
       setIsFading(true);
-    }, 3000);
+    }, 60000);
 
     return () => {
       if (intRef.current) clearInterval(intRef.current);
@@ -69,11 +74,11 @@ function Hero() {
       setIsFading(false);
       setIsFaded(false);
     }
-  }, [currentImageIndex]);
+  }, [currentImageIndex, isFaded, isFading]);
 
   return (
     <div
-      className="grow relative
+      className="grow relative bg-base-100
         grid grid-cols-2 grid-rows-2
     "
     >
@@ -82,7 +87,13 @@ function Hero() {
              ${isFading ? "opacity-25" : ""}
         `}
       >
-        <Image src={src} alt="banner1" fill className="object-cover" />
+        <Image
+          src={src}
+          alt="banner1"
+          fill
+          className="object-cover size"
+          style={{ objectPosition: "center top" }}
+        />
       </figure>
       <div
         className="col-start-1 col-end-3 lg:col-end-2 row-start-1 row-span-1
@@ -125,7 +136,7 @@ function Hero() {
           {message}
         </p>
         <Link
-          href={"/iletisim"}
+          href={"#iletişim"}
           className={` justify-self-end btn btn-secondary 
              ${
                isFading

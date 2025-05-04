@@ -7,7 +7,7 @@ function Header({ isMenuOpen }: { isMenuOpen: boolean }) {
     <header
       className={`absolute top-0 right-0 bg-base-100 z-20 lg:relative 
         flex gap-y-[3vh] flex-col lg:flex-row lg:justify-between items-center
-        p-[3vh] lg:p-0 h-screen lg:h-auto
+        px-[3vw] py-[3vh]  lg:py-0 h-screen lg:h-auto
         transition-transform
         ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
       `}

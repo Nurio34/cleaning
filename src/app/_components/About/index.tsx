@@ -15,7 +15,7 @@ function About() {
         <div className="absolute z-20 -top-12 -left-12 text-9xl">✨</div>
       </div>
       <h2
-        className="col-start-1 col-span-full row-start-1 row-end-3 self-center justify-self-center text-xl lg:text-7xl font-extrabold pt-[2vh] lg:py-0"
+        className="col-start-1 col-span-full row-start-1 row-end-3 self-center justify-self-center text-xl lg:text-5xl font-extrabold pt-[2vh] lg:py-0"
         style={{ fontVariant: "small-caps" }}
       >
         Hakkımızda
@@ -42,7 +42,7 @@ function About() {
             shadow-[0px_20px_50px_-10px_black] order-1"
       >
         <Image
-          src={"/banner/2.jpg"}
+          src={"/sections/about.png"}
           alt="banner2"
           fill
           className="object-cover"

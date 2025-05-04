@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Banner from "./_components/Banner";
+import { Toaster } from "react-hot-toast";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,13 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased lg:px-[2vw] overflow-x-hidden`}
-      >
-        <Banner />
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable}  antialiased w-screen overflow-x-hidden`}
+        >
+          <Toaster toastOptions={{ duration: 5000 }} />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
