@@ -17,7 +17,12 @@ function Testimonial() {
           className="absolute z-20 -top-11 -left-11  w-20 aspect-square rounded-full overflow-hidden"
           style={{ fontFamily: "fantasy" }}
         >
-          <Image src={"/testimonial/1.png"} alt="etstimonial" fill />
+          <Image
+            src={"/testimonial/1.png"}
+            alt="apartman temizliği hizmetini kullananların yorumları"
+            fill
+            sizes="(min-width=1023px) 100vw,50vw"
+          />
         </figure>
       </div>
       <div
@@ -50,7 +55,12 @@ function Testimonial() {
           "
           >
             <figure className="relative w-full lg:w-56 aspect-video">
-              <Image src={"/testimonial/client1.jpeg"} alt="client1" fill />
+              <Image
+                src={"/testimonial/client1.jpeg"}
+                alt="apartman temizliği kullanan müşteri"
+                fill
+                sizes="(min-width=1023px) 100vw,50vw"
+              />
             </figure>
             <div className="grow relative px-2 bg-white rounded-bl-lg rounded-br-lg space-y-1 py-4">
               <figure className="absolute -top-4 left-4 w-8 aspect-square rounded-full overflow-hidden">
@@ -59,6 +69,7 @@ function Testimonial() {
                   alt="svg"
                   fill
                   className="object-cover"
+                  sizes="(min-width=1023px) 100vw,50vw"
                 />
               </figure>
               <h2 className="text-lg font-semibold">
@@ -89,7 +100,12 @@ function Testimonial() {
           "
           >
             <figure className="relative w-56 aspect-video">
-              <Image src={"/testimonial/client2.jpeg"} alt="client1" fill />
+              <Image
+                src={"/testimonial/client2.jpeg"}
+                alt="apartman temizliği kullanan müşteri"
+                fill
+                sizes="(min-width=1023px) 100vw,50vw"
+              />
             </figure>
             <div className="grow relative px-2 bg-white rounded-bl-lg rounded-br-lg space-y-1 py-4">
               <figure className="absolute -top-4 left-4 w-8 aspect-square rounded-full overflow-hidden">

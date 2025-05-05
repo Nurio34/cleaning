@@ -12,24 +12,27 @@ export type ImageType = {
 
 const images = [
   {
-    src: "/banner/yatay4.png",
-    title: "Parlayan Girişler, İlk İzlenim Temizlikle Başlar",
-    message: "Misafirlerinizi hijyenik ve bakımlı girişlerle karşılayın",
+    src: "/banner/yatay4.webp",
+    title: "Apartman Girişi Temizliği – İlk İzlenim Hijyenle Başlar",
+    message:
+      "Ziyaretçilerinizi profesyonel apartman girişi temizliği ile karşılayın",
   },
   {
-    src: "/banner/yatay2.png",
-    title: "Profesyonel Temizlik, Sağlıklı Yaşam",
-    message: "Uzman ekibimizle, yaşam alanlarınızı tertemiz yapıyoruz",
+    src: "/banner/yatay2.webp",
+    title: "Profesyonel Apartman Temizliği ile Sağlıklı Yaşam Alanları",
+    message: "Uzman temizlik ekibimizle apartmanınızı hijyenik ve ferah tutun",
   },
   {
-    src: "/banner/yatay3.png",
-    title: "Detaylara Özen – Her Köşede Hijyen",
-    message: "Kalite ve titizlikle, apartmanınızın her alanında temizlik",
+    src: "/banner/yatay3.webp",
+    title: "Detaylı Temizlik – Her Köşede Hijyen Garantisi",
+    message:
+      "Merdivenlerden asansöre, apartmanınızda eksiksiz temizlik hizmeti",
   },
   {
-    src: "/banner/yatay1.png",
-    title: "Güvenilir Hizmet, Ferah Apartmanlar",
-    message: "Apartmanınızda konfor ve hijyen için yanınızdayız",
+    src: "/banner/yatay1.webp",
+    title: "Güvenilir Apartman Temizliği Hizmeti ile Ferah Ortamlar",
+    message:
+      "Düzenli apartman temizliğiyle hijyenik ve konforlu yaşam alanları",
   },
 ];
 
@@ -47,7 +50,7 @@ function Hero() {
 
     intRef.current = setInterval(() => {
       setIsFading(true);
-    }, 60000);
+    }, 6000);
 
     return () => {
       if (intRef.current) clearInterval(intRef.current);
@@ -89,10 +92,12 @@ function Hero() {
       >
         <Image
           src={src}
-          alt="banner1"
+          alt="apartman temizliği hero"
           fill
           className="object-cover size"
           style={{ objectPosition: "center top" }}
+          sizes="(min-width=1023px) 100vw,50vw"
+          priority
         />
       </figure>
       <div

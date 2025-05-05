@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://aparmantemizligi.com
+
+# Sitemaps
+Sitemap: https://aparmantemizligi.com/sitemap.xml

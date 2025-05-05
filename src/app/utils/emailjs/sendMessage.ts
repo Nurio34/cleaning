@@ -1,10 +1,41 @@
+import { ContactFormSchema } from "@/app/libs/zod";
 import emailjs from "@emailjs/browser";
 
 export const sendMessage = async (
   name: string,
   email: string,
-  message: string
-) => {
+  message: string,
+  isKvkkChecked: boolean
+): Promise<{
+  status: "success" | "fail" | "error";
+  errors?: { name?: string; email?: string; message?: string; kvkk?: string };
+  text?: string;
+}> => {
+  const result = ContactFormSchema.safeParse({
+    name,
+    email,
+    message,
+    kvkk: isKvkkChecked,
+  });
+
+  if (!result.success) {
+    const fieldErrors: {
+      name?: string;
+      email?: string;
+      message?: string;
+      kvkk?: string;
+    } = {};
+
+    result.error.errors.forEach((err) => {
+      if (err.path[0] === "name") fieldErrors.name = err.message;
+      if (err.path[0] === "email") fieldErrors.email = err.message;
+      if (err.path[0] === "message") fieldErrors.message = err.message;
+      if (err.path[0] === "kvkk") fieldErrors.kvkk = err.message;
+    });
+
+    return { status: "fail", errors: fieldErrors };
+  }
+
   const templateParams = {
     subject: `${name} Teklif İstiyor`,
     description: "Teklif almak isteyen yeni bir müşteri var",
@@ -25,14 +56,13 @@ export const sendMessage = async (
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
-      return text;
+      return { status: "success", text };
     } catch (error) {
       console.log(error);
-
       attempt++;
-      if (attempt === maxRetries) {
-        throw error;
-      }
     }
   }
+
+  // 🛠 Fix: ensure all code paths return
+  return { status: "error" };
 };

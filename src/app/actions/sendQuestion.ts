@@ -8,22 +8,33 @@ import { PrismaQuestion } from "../../../prisma/types";
 export const sendQuestion = async (
   name: string,
   email: string,
-  question: string
+  question: string,
+  isKvkkChecked: boolean
 ): Promise<{
   status: "success" | "fail" | "error";
-  errors?: { name?: string; question?: string };
+  errors?: { name?: string; question?: string; kvkk?: string };
   data?: PrismaQuestion;
 }> => {
   try {
-    const result = QuestionsFormSchema.safeParse({ name, email, question });
+    const result = QuestionsFormSchema.safeParse({
+      name,
+      email,
+      question,
+      kvkk: isKvkkChecked,
+    });
 
     if (!result.success) {
-      const fieldErrors: { name?: string; email?: string; question?: string } =
-        {};
+      const fieldErrors: {
+        name?: string;
+        email?: string;
+        question?: string;
+        kvkk?: string;
+      } = {};
       result.error.errors.forEach((err) => {
         if (err.path[0] === "name") fieldErrors.name = err.message;
         if (err.path[0] === "email") fieldErrors.email = err.message;
         if (err.path[0] === "question") fieldErrors.question = err.message;
+        if (err.path[0] === "kvkk") fieldErrors.kvkk = err.message;
       });
 
       return { status: "fail", errors: fieldErrors };

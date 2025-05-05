@@ -28,10 +28,11 @@ function Services() {
         "
       >
         <Image
-          src={"/sections/services.png"}
-          alt="banner2"
+          src={"/sections/services.webp"}
+          alt="apartman temizliği hizmetleri"
           fill
           className="object-cover"
+          sizes="(min-width=1023px) 100vw,50vw"
         />
       </figure>
       <div
@@ -46,24 +47,30 @@ function Services() {
           className="text-xl font-extrabold flex items-center"
           style={{ fontVariant: "small-caps" }}
         >
-          <span className="text-5xl">🏢</span>Apartman Temizliği
+          <span className="text-5xl">🏢</span>Apartman Temizliği Hizmeti
         </h2>
+
         <p className="indent-9">
-          Yaşadığınız apartmanın hijyenik, düzenli ve ferah kalmasını sağlamak
-          için profesyonel apartman temizliği hizmeti sunuyoruz. Ortak kullanım
-          alanları, merdivenler, asansörler ve giriş bölümleri titizlikle
-          temizlenir ve hijyen standartlarına uygun hale getirilir.{" "}
+          Yaşadığınız apartmanın her zaman temiz, hijyenik ve düzenli kalmasını
+          sağlamak için
+          <strong> profesyonel apartman temizliği hizmeti</strong> sunuyoruz.
+          Ortak kullanım alanları, merdivenler, asansörler ve bina girişleri
+          <strong> hijyen kurallarına uygun şekilde</strong> özenle temizlenir.
         </p>
+
         <ul className="px-[1vw]">
-          <li>✅ Merdiven ve koridor temizliği</li>
-          <li>✅ Asansör ve giriş temizliği</li>
-          <li>✅ Çöp alanlarının düzenlenmesi ve temizliği</li>
-          <li>✅ Kapı, cam ve trabzan temizliği</li>
+          <li>✅ Merdiven ve koridorların düzenli temizliği</li>
+          <li>✅ Asansör ve bina girişi hijyen bakımı</li>
+          <li>✅ Çöp alanlarının temizlenmesi ve düzenlenmesi</li>
+          <li>✅ Kapı, cam ve trabzan yüzeylerinin detaylı temizliği</li>
         </ul>
-        <p className="">
-          Apartmanınızın düzenli bakım ve temizliği için bizimle iletişime
-          geçin!
+
+        <p>
+          <strong>Apartmanınızda sağlıklı yaşam alanları</strong> oluşturmak ve{" "}
+          <strong>düzenli temizlik hizmeti</strong> almak için hemen bizimle
+          iletişime geçin.
         </p>
+
         <Link
           href={"#iletişim"}
           className="justify-self-end btn btn-secondary transition-transform hover:scale-125"

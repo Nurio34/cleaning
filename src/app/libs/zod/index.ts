@@ -10,6 +10,11 @@ export const QuestionsFormSchema = z.object({
       "Lütfen sorunuzda daha fazla detay verin. En az 10 karakter olmalıdır."
     )
     .max(1000, "Soru çok uzun. Lütfen 1000 karakteri aşmayın."),
+  kvkk: z.literal(true, {
+    errorMap: () => ({
+      message: "KVKK onay kutusunu işaretlemeniz gerekiyor.",
+    }),
+  }),
 });
 
 export type QuestionsFormType = z.infer<typeof QuestionsFormSchema>;
@@ -28,6 +33,11 @@ export const ContactFormSchema = z.object({
     .min(10, "Mesajınız en az 10 karakter olmalı!")
     .max(1000, "Mesajınız 1000 karakteri aşamaz.")
     .nonempty("Mesaj alanı boş bırakılamaz!"),
+  kvkk: z.literal(true, {
+    errorMap: () => ({
+      message: "KVKK onay kutusunu işaretlemeniz gerekiyor.",
+    }),
+  }),
 });
 
 export type ContactFormType = z.infer<typeof ContactFormSchema>;
