@@ -4,9 +4,6 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
-import Banner from "./_components/Banner";
-import Footer from "./_components/Footer";
-import Backkground from "./_components/Background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,11 +69,8 @@ export default function RootLayout({
         >
           <Analytics />
           <Toaster toastOptions={{ duration: 5000 }} />
-          <Backkground />
-          <Banner />
 
           {children}
-          <Footer />
         </body>
       </html>
     </ClerkProvider>

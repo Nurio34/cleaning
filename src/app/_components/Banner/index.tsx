@@ -32,11 +32,6 @@ function Banner() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (isMobile) setIsMenuOpen(false);
-    else setIsMenuOpen(true);
-  }, [isMobile]);
-
   return (
     <div
       id="ana-sayfa"

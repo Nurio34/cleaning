@@ -8,7 +8,7 @@ function Footer() {
         <ul className="space-y-[2vw] lg:space-y-2">
           <li>
             <Link
-              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-info/70 hover:scale-110"
+              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-primary/70 hover:scale-110"
               href="/gizlilik"
             >
               Gizlilik Politikası
@@ -16,7 +16,7 @@ function Footer() {
           </li>
           <li>
             <Link
-              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-info/70 hover:scale-110"
+              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-primary/70 hover:scale-110"
               href="/kvkk"
             >
               KVKK
@@ -24,7 +24,7 @@ function Footer() {
           </li>
           <li>
             <Link
-              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-info/70 hover:scale-110"
+              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-primary/70 hover:scale-110"
               href="/cerez-politikasi"
             >
               Çerez Politikası
@@ -32,7 +32,7 @@ function Footer() {
           </li>
           <li>
             <Link
-              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-info/70 hover:scale-110"
+              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-primary/70 hover:scale-110"
               href="/kullanim-kosullari"
             >
               Kullanım Koşulları
@@ -40,7 +40,7 @@ function Footer() {
           </li>
           <li>
             <Link
-              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-info/70 hover:scale-110"
+              className="block text-xs lg:text-base text-primary contrast-200 underline underline-offset-2 font-semibold transition-all hover:text-primary/70 hover:scale-110"
               href="/#iletişim"
             >
               İletişim
